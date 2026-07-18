@@ -349,6 +349,6 @@ def add_bg_from_local(image_file):
     st.title("COVID-19 Dashboard")
     st.write("Welcome to the COVID-19 Data Analysis Dashboard")
     fig3.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
-   st.plotly_chart(fig3, use_container_width=True)
+    st.plotly_chart(fig3, use_container_width=True)
         
         
