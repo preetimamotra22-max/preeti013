@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import plotly.express as px
 import pandas as pd
+import base64
 # import seaborn as sns
 # import matplotlib.pyplot as plt
     
@@ -317,6 +318,36 @@ elif menu=="Visualization":
             fig3 = px.pie(region_df, values='Confirmed', names='WHO Region',
                             color_discrete_sequence=px.colors.qualitative.Set3)
             fig3.update_traces(textinfo='percent+label')
+
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image:
+        encoded = base64.b64encode(image.read()).decode()
+
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+
+        /* Optional: Make text more visible */
+        h1, h2, h3, h4, h5, h6, p, label, div {{
+            color: white;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Call the function
+add_bg_from_local("covidbg.jpg")
+
+st.title("COVID-19 Dashboard")
+st.write("Welcome to the COVID-19 Data Analysis Dashboard")
             fig3.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
             st.plotly_chart(fig3, use_container_width=True)
 
