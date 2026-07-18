@@ -292,12 +292,12 @@ if menu == "Visualization":
            st.plotly_chart(fig2, use_container_width=True)
             
             # 3. WHO REGION PIE
-                st.subheader("Cases by WHO Region")
-                region_df = df_view.groupby('WHO Region')['Confirmed'].sum().reset_index()
-                fig3 = px.pie(region_df, values='Confirmed', names='WHO Region',
+           st.subheader("Cases by WHO Region")
+           region_df = df_view.groupby('WHO Region')['Confirmed'].sum().reset_index()
+           fig3 = px.pie(region_df, values='Confirmed', names='WHO Region',
                                   color_discrete_sequence=px.colors.qualitative.Set3)
-                fig3.update_traces(textinfo='percent+label')
-                fig3.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
-                st.plotly_chart(fig3, use_container_width=True)
+           fig3.update_traces(textinfo='percent+label')
+           fig3.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
+           st.plotly_chart(fig3, use_container_width=True)
                 
         
