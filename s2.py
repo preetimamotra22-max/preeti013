@@ -254,10 +254,10 @@ if menu == "Visualization":
         
      menu == "Maps"
      st.header("🌍  Map")
-    fig_map = px.choropleth(df_view, locations="Country/Region", locationmode="country names",
+     fig_map = px.choropleth(df_view, locations="Country/Region", locationmode="country names",
                                     color="Confirmed", hover_name="Country/Region",
                                     color_continuous_scale="Reds")
-    st.plotly_chart(fig_map, use_container_width=True)
+     st.plotly_chart(fig_map, use_container_width=True)
         
         
         
