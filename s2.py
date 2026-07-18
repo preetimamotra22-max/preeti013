@@ -261,14 +261,11 @@ if menu == "Visualization":
         
         
         
-    st.header("📈 Pie Chart Visualizations")
-            
-        col1, col2 = st.columns(2)
-            
-            # 1.  covid 19  PIE - Confirmed vs Deaths vs Recovered vs Active
-        with col1:
-                st.subheader("Covid-19 cases")
-                total_data = {
+     st.header("📈 Pie Chart Visualizations")
+     col1, col2 = st.columns(2)
+     with col1:
+         st.subheader("Covid-19 cases")
+         total_data = {
                     'Status': ['Confirmed', 'Deaths', 'Recovered', 'Active'],
                     'Count': [
                         df_view['Confirmed'].sum(),
@@ -277,13 +274,13 @@ if menu == "Visualization":
                         df_view['Active'].sum()
                     ]
                 }
-                total_df = pd.DataFrame(total_data)
+          total_df = pd.DataFrame(total_data)
                 
-                fig1 = px.pie(total_df, values='Count', names='Status', 
+          fig1 = px.pie(total_df, values='Count', names='Status', 
                               hole=0.4, color_discrete_sequence=['#FF4B4B','#8B0000','#00CC96','#636EFA'])
-                fig1.update_traces(textinfo='percent+label')
-                fig1.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
-                st.plotly_chart(fig1, use_container_width=True)
+          fig1.update_traces(textinfo='percent+label')
+          fig1.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
+          st.plotly_chart(fig1, use_container_width=True)
             
             # 2. TOP 10 COUNTRIES PIE
         with col2:
