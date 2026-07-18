@@ -9,9 +9,15 @@ st.set_page_config(page_title="COVID-19 DATA ANALYSIS",page_icon=":heart:",layou
 df=pd.read_csv("covid.csv")
 df.info()
 
+# with st.sidebar:
+#     menu=st.sidebar("Menu",options=["Home","Dataset","Visualization","Dashboard"],icons=["house","file-text","activity","bare-chart"],default_index=0)
 with st.sidebar:
-    menu=st.sidebar("Menu",options=["Home","Dataset","Visualization","Dashboard"],icons=["house","file-text","activity","bare-chart"],default_index=0)
-
+    menu = option_menu(
+        menu_title="Menu",
+        options=["Home", "Dataset", "Visualization", "Dashboard"],
+        icons=["house", "file-text", "activity", "bar-chart"], # Note: fixed "bare-chart" to "bar-chart"
+        default_index=0
+    )
 if menu=="Home":
     st.title("🦠COVID-19 DATA ANALYSIS")
 
