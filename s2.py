@@ -283,15 +283,15 @@ if menu == "Visualization":
          st.plotly_chart(fig1, use_container_width=True)
             
             # 2. TOP 10 COUNTRIES PIE
-      with col2:
-          st.subheader("Top 10 Countries by Confirmed")
-          top10 = df_view.sort_values("Confirmed", ascending=False).head(10)
+       with col2:
+           st.subheader("Top 10 Countries by Confirmed")
+           top10 = df_view.sort_values("Confirmed", ascending=False).head(10)
                 
-          fig2 = px.pie(top10, values='Confirmed', names='Country/Region',
+           fig2 = px.pie(top10, values='Confirmed', names='Country/Region',
                               color_discrete_sequence=px.colors.sequential.Reds)
-          fig2.update_traces(textinfo='percent+label', textposition='inside')
-          fig2.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
-          st.plotly_chart(fig2, use_container_width=True)
+           fig2.update_traces(textinfo='percent+label', textposition='inside')
+           fig2.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
+            st.plotly_chart(fig2, use_container_width=True)
             
             # 3. WHO REGION PIE
                 st.subheader("Cases by WHO Region")
