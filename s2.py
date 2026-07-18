@@ -32,7 +32,7 @@ if menu=="Home":
     """) 
 
 
-if  menu=="Dataset":
+elif  menu=="Dataset":
    st. header("  Dataset")
    c1,c2,c3=st.tabs(["Data","Info","Description"])
    with c1:
@@ -222,7 +222,7 @@ elif menu=="Visualization":
     menu = st.sidebar.radio("Menu", ["Dataset", "Visualization", "Maps"])
     
 
-if menu == "Dataset":
+elif menu == "Dataset":
     st.header("Dataset")
 tab1, tab2, tab3 = st.tabs(["Data", "Info", "Description"])
 
@@ -239,7 +239,7 @@ with tab2:
             st.table(df_view.describe().T)
 
 
-if menu == "Visualization":
+elif menu == "Visualization":
      st.header("📈 Graphs for Selected Country/Countries")
      top = df_view.sort_values("Confirmed", ascending=False).head(10)
      fig1 = px.bar(top, x="Country/Region", y="Confirmed", color="Confirmed",
