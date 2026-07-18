@@ -289,7 +289,7 @@ if menu == "Visualization":
                               color_discrete_sequence=px.colors.sequential.Reds)
            fig2.update_traces(textinfo='percent+label', textposition='inside')
            fig2.update_layout(paper_bgcolor="#0e1117", plot_bgcolor="#0e1117", font_color="white")
-            st.plotly_chart(fig2, use_container_width=True)
+           st.plotly_chart(fig2, use_container_width=True)
             
             # 3. WHO REGION PIE
                 st.subheader("Cases by WHO Region")
