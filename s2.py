@@ -41,8 +41,8 @@ elif  menu=="Dataset":
        st.write(df.columns)
    with c3:
        st.table(df.describe())
-elif menu=="Visualization":
-    st.title(" visualization")
+# elif menu=="Visualization":
+#     st.title(" visualization")
 
 # GRAPH 1: BUBBLE CHART - 4 dimensions
     st.header("1. Bubble: Death Rate vs Recovery Rate")
@@ -221,7 +221,6 @@ elif menu=="Visualization":
     # ============ MENU ============
     menu = st.sidebar.radio("Menu", ["Dataset", "Visualization", "Maps"])
     
-
 elif menu == "Dataset":
     st.header("Dataset")
 tab1, tab2, tab3 = st.tabs(["Data", "Info", "Description"])
