@@ -241,29 +241,27 @@ with tab2:
 
 if menu == "Visualization":
      st.header("📈 Graphs for Selected Country/Countries")
-
-    # Top 10 Bar Chart
-      top = df_view.sort_values("Confirmed", ascending=False).head(10)
-      fig1 = px.bar(top, x="Country/Region", y="Confirmed", color="Confirmed",
+    top = df_view.sort_values("Confirmed", ascending=False).head(10)
+    fig1 = px.bar(top, x="Country/Region", y="Confirmed", color="Confirmed",
                           color_continuous_scale="Reds", title="Top Confirmed Cases")
-       fig1.update_xaxes(tickangle=-45)
-       st.plotly_chart(fig1, use_container_width=True)
+    fig1.update_xaxes(tickangle=-45)
+    st.plotly_chart(fig1, use_container_width=True)
         
             # Scatter
-       fig2 = px.scatter(df_view, x="Deaths / 100 Cases", y="Recovered / 100 Cases",
+    fig2 = px.scatter(df_view, x="Deaths / 100 Cases", y="Recovered / 100 Cases",
                               size="Confirmed", color="WHO Region", hover_name="Country/Region")
-        st.plotly_chart(fig2, use_container_width=True)
+    st.plotly_chart(fig2, use_container_width=True)
         
-        menu == "Maps"
-        st.header("🌍  Map")
-        fig_map = px.choropleth(df_view, locations="Country/Region", locationmode="country names",
+    menu == "Maps"
+    st.header("🌍  Map")
+    fig_map = px.choropleth(df_view, locations="Country/Region", locationmode="country names",
                                     color="Confirmed", hover_name="Country/Region",
                                     color_continuous_scale="Reds")
-        st.plotly_chart(fig_map, use_container_width=True)
+    st.plotly_chart(fig_map, use_container_width=True)
         
         
         
-        st.header("📈 Pie Chart Visualizations")
+    st.header("📈 Pie Chart Visualizations")
             
         col1, col2 = st.columns(2)
             
