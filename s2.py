@@ -7,7 +7,7 @@ df=pd.read_csv("covid.csv")
 df.info()
 
 with st.sidebar:
-    menu=st.sidebar("Menu",options=["Home","Dataset","Visualization","Dashboard"],icons=["house","file-text","activity","bare-chart"],default_index=0)
+    menu=st.sidebar("Menu",["Home","Dataset","Visualization","Dashboard"],icons=["house","file-text","activity","bare-chart"],default_index=0)
 
 if menu=="Home":
     st.title("🦠COVID-19 DATA ANALYSIS")
